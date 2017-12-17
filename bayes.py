@@ -5,27 +5,37 @@ Created on Tue Aug 22 14:10:53 2017
 @author: Shivam
 """
 
+from collections import defaultdict
 
-i=int(input("how many outcomes are there for the first part?"))
-piece=0
+d=defaultdict(list)
 
-init_prob=[]
-while piece<i:
-    piece+=1
-    prob1=float(input('what is the probability'))
-    init_prob.append(prob1)
-print(init_prob)
-length=(len(init_prob))
-
-
-for u in range(length):
-    s=int(input('how many outcomes are there for the second part?'))
-    sec_prob=[]
-    for x in range(s):
-        prob2=float(input('what is the probability?'))
-        sec_prob.append(prob2)
-    print(sec_prob)
+start=int(input("how many choices are present?"))
+count=0
+while start>0:
+    count+=1
+    A=float(input('what is the probability of the first set of events?'))
     
+    ask=int(input('how many possibilities are linked to the individual events?'))
+    
+    second=0
+    
+    tree=[]
+    while ask>0:
+        second+=1
+        B=float(input('what is the probability?'))
+        tree.append(B)
+        if second==ask:
+            break
+    
+   
+    d.setdefault(A, []).append(tree)    
+
+    if count==start:
+        break
+
+print(d)
+    
+
 
 
 
