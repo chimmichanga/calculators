@@ -66,7 +66,7 @@ true_denominator=float(final_denominator)
 
 P21=(decision)
 P1=(choice)
-print(P21*P1)/(true_denominator)
+print((P21*P1)/(true_denominator))
 
     
 
